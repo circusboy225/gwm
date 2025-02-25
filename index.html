@@ -27,11 +27,25 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 426px; /* 2x bigger than 213px */
-            height: 1882px; /* 2x bigger than 941px */
+            width: 426px;
+            height: 1882px;
             opacity: 0;
             transition: opacity 15s ease-in;
             z-index: 10;
+        }
+
+        
+        @keyframes grow {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(4); 
+            }
+        }
+
+        .grow {
+            animation: grow 10s forwards; 
         }
     </style>
 </head>
@@ -52,6 +66,7 @@
             audio.play();
             phone.style.opacity = "0";
             greenClown.style.opacity = "1";
+            greenClown.classList.add("grow"); 
         });
 
         phone.addEventListener("mouseover", function() {
