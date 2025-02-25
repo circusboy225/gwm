@@ -41,9 +41,17 @@
     <audio id="audio" src="https://raw.githubusercontent.com/circusboy225/gwm/main/gwm.mp3"></audio>
 
     <script>
-        document.getElementById("phone").addEventListener("click", function() {
-            document.getElementById("audio").play();
-            document.getElementById("greenclown").style.opacity = "1";
+        const phone = document.getElementById("phone");
+        const audio = document.getElementById("audio");
+        const greenClown = document.getElementById("greenclown");
+
+        phone.addEventListener("click", function() {
+            audio.play();
+            greenClown.style.opacity = "1";
+        });
+
+        phone.addEventListener("mouseover", function() {
+            phone.style.cursor = "pointer";
         });
     </script>
 
