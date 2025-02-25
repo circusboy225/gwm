@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWM Player</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: transparent;
+            margin: 0;
+            overflow: hidden;
+        }
+        #phone {
+            cursor: pointer;
+            width: 1500px;
+        }
+        #greenclown {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 15s ease-in;
+            width: 2000px;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="phone" src="https://raw.githubusercontent.com/circusboy225/gwm/main/phone.png" alt="Phone">
+    <audio id="audio" src="https://raw.githubusercontent.com/circusboy225/gwm/main/gwm.mp3"></audio>
+    <img id="greenclown" src="https://raw.githubusercontent.com/circusboy225/gwm/main/greenclown.jpg" alt="Green Clown">
+
+    <script>
+        document.getElementById("phone").addEventListener("click", function() {
+            document.getElementById("audio").play();
+            document.getElementById("greenclown").style.opacity = "1";
+        });
+    </script>
+
+</body>
+</html>
