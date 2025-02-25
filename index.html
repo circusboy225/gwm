@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Image and Audio</title>
-  <style>
-    body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-
-    #image {
-      width: 400px;
-      height: auto;
-      transition: opacity 15s ease-in-out;
-    }
-
-    #audio {
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GWM Player</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: transparent;
+            margin: 0;
+            overflow: hidden;
+        }
+        #container {
+            position: relative;
+            display: inline-block;
+        }
+        #phone {
+            cursor: pointer;
+            width: 1600px;
+            position: relative;
+            z-index: 1;
+            transition: opacity 2s ease-out;
+        }
+        #greenclown {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 533px;
+            opacity: 0;
+            transition: opacity 15s ease-in;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
-  <img id="image" src="phone.png" alt="Phone Image" onclick="playAudioAndFade()">
-  <audio id="audio" src="gwm.mp3"></audio>
-  <script>
-    function playAudioAndFade() {
-      var image = document.getElementById('image');
-      var audio = document.getElementById('audio');
-      audio.play();
-      image.style.opacity = 0;
-      setTimeout(function() {
-        image.src = 'greenclown.jpg';
-        image.style.opacity = 1;
-      }, 15000);  <!-- 15 seconds delay -->
-    }
-  </script>
+
+    <div id="container">
+        <img id="phone" src="https://raw.githubusercontent.com/circusboy225/gwm/main/phone.png" alt="Phone">
+        <img id="greenclown" src="https://raw.githubusercontent.com/circusboy225/gwm/main/greenclown.jpg" alt="Green Clown">
+    </div>
+    <audio id="audio" src="https://raw.githubusercontent.com/circusboy225/gwm/main/gwm.mp3"></audio>
+
+    <script>
+        const phone = document.getElementById("phone");
+        const audio = document.getElementById("audio");
+        const greenClown = document.getElementById("greenclown");
+
+        phone.addEventListener("click", function() {
+            audio.play();
+            phone.style.opacity = "0";
+            greenClown.style.opacity = "1";
+        });
+
+        phone.addEventListener("mouseover", function() {
+            phone.style.cursor = "pointer";
+        });
+    </script>
+
 </body>
 </html>
