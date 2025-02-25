@@ -11,26 +11,34 @@
             margin: 0;
             overflow: hidden;
         }
+        #container {
+            position: relative;
+            display: inline-block;
+        }
         #phone {
             cursor: pointer;
-            width: 1500px;
+            width: 1200px;
+            position: relative;
+            z-index: 2;
         }
         #greenclown {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            width: 1600px;
             opacity: 0;
             transition: opacity 15s ease-in;
-            width: 2000px;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
 
-    <img id="phone" src="https://raw.githubusercontent.com/circusboy225/gwm/main/phone.png" alt="Phone">
+    <div id="container">
+        <img id="phone" src="https://raw.githubusercontent.com/circusboy225/gwm/main/phone.png" alt="Phone">
+        <img id="greenclown" src="https://raw.githubusercontent.com/circusboy225/gwm/main/greenclown.jpg" alt="Green Clown">
+    </div>
     <audio id="audio" src="https://raw.githubusercontent.com/circusboy225/gwm/main/gwm.mp3"></audio>
-    <img id="greenclown" src="https://raw.githubusercontent.com/circusboy225/gwm/main/greenclown.jpg" alt="Green Clown">
 
     <script>
         document.getElementById("phone").addEventListener("click", function() {
